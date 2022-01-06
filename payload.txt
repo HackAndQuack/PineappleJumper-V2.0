@@ -19,5 +19,6 @@ Q STRING cd /
 DELAY 1000
 Q STRING /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
 DELAY 1000
-Q STRING networksetup -setairportnetwork en0 Fios-R3JT1-5G
+#Please Enter you WiFi at the end of en0 and you password if you have one
+Q STRING networksetup -setairportnetwork en0 <Your Wifi SSID> <PASSWORD>
 Q ENTER
