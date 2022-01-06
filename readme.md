@@ -1,4 +1,4 @@
-Title: 		PineAppleJumper
+Title: 		PineappleJumper
 Author:		PuggosTheDuck
 Version: 1.0
 
