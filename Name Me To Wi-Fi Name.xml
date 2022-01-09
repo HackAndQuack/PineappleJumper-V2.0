@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<WLANProfile xmlns="http://www.microsoft.com/networking/WLAN/profile/v1">
+<!--Please enter in the SSID-->
+	<name>SSID</name>
+	<SSIDConfig>
+		<SSID>
+			<!--Please enter the Hex Number and the SSID of the Wi-Fi-->
+			<hex>HEX</hex>
+			<name>SSID</name>
+		</SSID>
+	</SSIDConfig>
+	<connectionType>ESS</connectionType>
+	<connectionMode>manual</connectionMode>
+	<MSM>
+		<security>
+			<authEncryption>
+				<authentication>open</authentication>
+				<encryption>none</encryption>
+				<useOneX>false</useOneX>
+			</authEncryption>
+		</security>
+	</MSM>
+	<MacRandomization xmlns="http://www.microsoft.com/networking/WLAN/profile/v3">
+		<enableRandomization>false</enableRandomization>
+		<randomizationSeed>3133518040</randomizationSeed>
+	</MacRandomization>
+</WLANProfile>
